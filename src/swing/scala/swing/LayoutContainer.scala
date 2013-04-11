@@ -70,4 +70,14 @@ trait LayoutContainer extends Container.Wrapper {
         (comp, constraintsFor(comp))
       }
   }
+
+  /**
+   * set(myConstraints) = myComponent
+   */
+  def set = new ConstraintsComponent
+  private class ConstraintsComponent{ //TODO unnecessary
+    def update(cnst:Constraints, com:Component) = add(com, cnst)
+  }
+
 }
+

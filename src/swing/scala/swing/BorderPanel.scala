@@ -57,4 +57,5 @@ class BorderPanel extends Panel with LayoutContainer {
     if(old != null) peer.remove(old)
     peer.add(c.peer, l.toString)
   }
+
 }
