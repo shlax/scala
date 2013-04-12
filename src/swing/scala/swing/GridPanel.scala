@@ -19,9 +19,9 @@ object GridPanel {
  *
  * @see java.awt.GridLayout
  */
-class GridPanel(rows0: Int, cols0: Int) extends Panel with SequentialContainer.Wrapper {
+class GridPanel(rows0: Int, cols0: Int, hgap:Int=0, vgap:Int=0) extends Panel with SequentialContainer.Wrapper {
   override lazy val peer =
-    new javax.swing.JPanel(new java.awt.GridLayout(rows0, cols0)) with SuperMixin
+    new javax.swing.JPanel(new java.awt.GridLayout(rows0, cols0, hgap, vgap)) with SuperMixin
 
   /*type Constraints = (Int, Int)
 
