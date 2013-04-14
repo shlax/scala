@@ -18,6 +18,9 @@ class DesktopPane extends Component with SequentialContainer.Wrapper {
   def dragMode = if(peer.getDragMode == JDesktopPane.LIVE_DRAG_MODE) DragMode.Live else DragMode.Outline
   def dragMode_=(d:DragMode.Value) = peer.setDragMode(d.id)
 
+  def selectedFrame = contents.find(_.peer == peer.getSelectedFrame).asInstanceOf[Option[InternalFrame]]
+  def selectedFrame_=(f:InternalFrame) = peer.setSelectedFrame(f.peer)
 
+  def allFrames = contents.collect{ case f : InternalFrame => f } // : mutable.Buffer[InternalFrame]
 
 }
